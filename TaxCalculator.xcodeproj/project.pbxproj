@@ -11,6 +11,7 @@
 		9152881A2BBB4C2300E40C2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288192BBB4C2300E40C2E /* ContentView.swift */; };
 		9152881C2BBB4C2500E40C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9152881B2BBB4C2500E40C2E /* Assets.xcassets */; };
 		9152881F2BBB4C2500E40C2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9152881E2BBB4C2500E40C2E /* Preview Assets.xcassets */; };
+		915288272BBB4C8D00E40C2E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288262BBB4C8D00E40C2E /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		915288192BBB4C2300E40C2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9152881B2BBB4C2500E40C2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9152881E2BBB4C2500E40C2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		915288262BBB4C8D00E40C2E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		915288162BBB4C2300E40C2E /* TaxCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				915288252BBB4C7B00E40C2E /* Extentions */,
 				915288172BBB4C2300E40C2E /* TaxCalculatorApp.swift */,
 				915288192BBB4C2300E40C2E /* ContentView.swift */,
 				9152881B2BBB4C2500E40C2E /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				9152881E2BBB4C2500E40C2E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		915288252BBB4C7B00E40C2E /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				915288262BBB4C8D00E40C2E /* Color.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				9152881A2BBB4C2300E40C2E /* ContentView.swift in Sources */,
 				915288182BBB4C2300E40C2E /* TaxCalculatorApp.swift in Sources */,
+				915288272BBB4C8D00E40C2E /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
