@@ -9,10 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var precentage: String = ""
-    @State private var price: String = ""
-    
-    var result: Double = 0.0
+    @EnvironmentObject private var vm: HomeViewModel
     
     var body: some View {
         ZStack {
@@ -21,26 +18,17 @@ struct HomeView: View {
             
             VStack {
                 VStack(spacing: 30) {
-                    percentageInput
+                    percentInput
                     priceInput
-                    
                     calculateButton
                 }
+                .padding(.top, 10)
                 
                 Spacer()
-                
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Result")
-                        .font(.headline)
-                        .foregroundColor(.theme.accent)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Text("\(result)")
-                        .font(.title)
-                        .bold()
-                        .foregroundColor(.theme.secondaryText)
-                }
-                
+                progressView
+                Spacer()
+                resultSection
+                Spacer()
                 Spacer()
             }
             .padding()
@@ -50,16 +38,16 @@ struct HomeView: View {
 
 extension HomeView {
     
-    private var percentageInput: some View {
+    private var percentInput: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("% Precentage")
                 .font(.headline)
                 .foregroundColor(.theme.accent)
             
-            TextField("Enter the precentage..", text: $precentage)
+            TextField("Enter the precentage..", text: $vm.percent)
                 .font(.body)
                 .foregroundColor(.theme.secondaryText)
-                .keyboardType(.numberPad)
+                .keyboardType(.decimalPad)
                 .disableAutocorrection(true)
 //                            .focused($isEnabled)
                 .padding(10)
@@ -76,10 +64,10 @@ extension HomeView {
                 .font(.headline)
                 .foregroundColor(.theme.accent)
             
-            TextField("Enter the price..", text: $price)
+            TextField("Enter the price..", text: $vm.price)
                 .font(.body)
                 .foregroundColor(.theme.secondaryText)
-                .keyboardType(.numberPad)
+                .keyboardType(.decimalPad)
                 .disableAutocorrection(true)
 //                            .focused($isEnabled)
                 .padding(10)
@@ -91,9 +79,8 @@ extension HomeView {
     }
     
     private var calculateButton: some View {
-        Button {
-            
-        } label: {
+        
+        Button(action: vm.calculate) {
             Text("Calculate".uppercased())
                 .font(.headline)
                 .foregroundColor(.theme.accent)
@@ -102,10 +89,63 @@ extension HomeView {
         .background(Color.theme.blue)
         .cornerRadius(6)
     }
+    
+    private var progressView: some View {
+        VStack {
+            if vm.isLoading {
+                ProgressView()
+            } else {
+                Text("")
+                    .frame(height: 19)
+            }
+        }
+    }
+    
+    private var resultSection: some View {
+        HStack {
+            VStack(spacing: 10) {
+                Text("Before Tax:")
+                    .font(.headline)
+                    .foregroundColor(.theme.accent)
+                
+                Text(vm.beforeTax.asNumberString())
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.theme.background)
+            }
+            .frame(width: 120)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.theme.blue)
+            )
+            
+            Spacer()
+            
+            VStack(spacing: 10) {
+                Text("Tax:")
+                    .font(.headline)
+                    .foregroundColor(.theme.accent)
+                
+                Text(vm.tax.asNumberString())
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.theme.background)
+            }
+            .frame(width: 120)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.theme.blue)
+            )
+        }
+        .padding(.horizontal, 20)
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(dev.homeVM)
     }
 }

@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct TaxCalculatorApp: App {
+    
+    @StateObject private var vm = HomeViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                HomeView()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(vm)
         }
     }
 }
