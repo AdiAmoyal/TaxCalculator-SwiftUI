@@ -20,6 +20,7 @@
 		915288352BBB7AE700E40C2E /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288342BBB7AE700E40C2E /* CalculatorViewModel.swift */; };
 		915288372BBB7CC700E40C2E /* TaxRateLookupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288362BBB7CC700E40C2E /* TaxRateLookupView.swift */; };
 		9152883A2BBB847200E40C2E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288392BBB847200E40C2E /* CustomTextField.swift */; };
+		9152883C2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152883B2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		915288342BBB7AE700E40C2E /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		915288362BBB7CC700E40C2E /* TaxRateLookupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateLookupView.swift; sourceTree = "<group>"; };
 		915288392BBB847200E40C2E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		9152883B2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateLookupViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				9152882E2BBB5FB900E40C2E /* HomeViewModel.swift */,
 				915288342BBB7AE700E40C2E /* CalculatorViewModel.swift */,
+				9152883B2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				9152882F2BBB5FB900E40C2E /* HomeViewModel.swift in Sources */,
 				9152882B2BBB509700E40C2E /* HomeView.swift in Sources */,
 				915288182BBB4C2300E40C2E /* TaxCalculatorApp.swift in Sources */,
+				9152883C2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift in Sources */,
 				915288332BBB7A9100E40C2E /* CalculatorView.swift in Sources */,
 				915288372BBB7CC700E40C2E /* TaxRateLookupView.swift in Sources */,
 				9152882D2BBB58F600E40C2E /* Double.swift in Sources */,
