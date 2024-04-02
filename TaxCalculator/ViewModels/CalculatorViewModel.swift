@@ -21,11 +21,15 @@ class CalculatorViewModel: ObservableObject {
            let price = Double(price) {
             self.beforeTax = price / (1 + percent / 100)
             self.tax = price - beforeTax
-            self.percent = ""
-            self.price = ""
+            clearTextFields()
             isLoading = false
         } else {
             print("ERROR")
         }
+    }
+    
+    func clearTextFields() {
+        self.percent = ""
+        self.price = ""
     }
 }

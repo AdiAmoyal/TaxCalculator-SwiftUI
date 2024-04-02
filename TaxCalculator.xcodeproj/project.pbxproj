@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9104FC0A2BBCA90100A7A035 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104FC092BBCA90100A7A035 /* NetworkingManager.swift */; };
+		9104FC0D2BBCBC8900A7A035 /* TaxRateDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104FC0C2BBCBC8900A7A035 /* TaxRateDataService.swift */; };
+		9104FC0F2BBCBEF400A7A035 /* TaxRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104FC0E2BBCBEF400A7A035 /* TaxRateModel.swift */; };
 		915288182BBB4C2300E40C2E /* TaxCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288172BBB4C2300E40C2E /* TaxCalculatorApp.swift */; };
 		9152881A2BBB4C2300E40C2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288192BBB4C2300E40C2E /* ContentView.swift */; };
 		9152881C2BBB4C2500E40C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9152881B2BBB4C2500E40C2E /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9104FC092BBCA90100A7A035 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		9104FC0C2BBCBC8900A7A035 /* TaxRateDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateDataService.swift; sourceTree = "<group>"; };
+		9104FC0E2BBCBEF400A7A035 /* TaxRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateModel.swift; sourceTree = "<group>"; };
 		915288142BBB4C2300E40C2E /* TaxCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		915288172BBB4C2300E40C2E /* TaxCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCalculatorApp.swift; sourceTree = "<group>"; };
 		915288192BBB4C2300E40C2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +58,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9104FC052BBCA73300A7A035 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9104FC0E2BBCBEF400A7A035 /* TaxRateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9104FC082BBCA8EF00A7A035 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9104FC092BBCA90100A7A035 /* NetworkingManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9104FC0B2BBCBC6900A7A035 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9104FC0C2BBCBC8900A7A035 /* TaxRateDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9152880B2BBB4C2200E40C2E = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +101,9 @@
 		915288162BBB4C2300E40C2E /* TaxCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				9104FC0B2BBCBC6900A7A035 /* Services */,
+				9104FC082BBCA8EF00A7A035 /* Utilities */,
+				9104FC052BBCA73300A7A035 /* Model */,
 				915288292BBB507100E40C2E /* ViewModels */,
 				915288282BBB506400E40C2E /* Views */,
 				915288252BBB4C7B00E40C2E /* Extentions */,
@@ -204,6 +237,8 @@
 				915288352BBB7AE700E40C2E /* CalculatorViewModel.swift in Sources */,
 				9152882F2BBB5FB900E40C2E /* HomeViewModel.swift in Sources */,
 				9152882B2BBB509700E40C2E /* HomeView.swift in Sources */,
+				9104FC0D2BBCBC8900A7A035 /* TaxRateDataService.swift in Sources */,
+				9104FC0F2BBCBEF400A7A035 /* TaxRateModel.swift in Sources */,
 				915288182BBB4C2300E40C2E /* TaxCalculatorApp.swift in Sources */,
 				9152883C2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift in Sources */,
 				915288332BBB7A9100E40C2E /* CalculatorView.swift in Sources */,
@@ -211,6 +246,7 @@
 				9152882D2BBB58F600E40C2E /* Double.swift in Sources */,
 				915288312BBB624900E40C2E /* PreviewProvider.swift in Sources */,
 				915288272BBB4C8D00E40C2E /* Color.swift in Sources */,
+				9104FC0A2BBCA90100A7A035 /* NetworkingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,17 @@ struct TaxRateLookupView: View {
                 zipInput
                 
                 searchButton
-
+                
+                VStack {
+                    Text("Results")
+                    if let rate = vm.taxRate.first {
+                        Text(rate.totalRate)
+                        Text(rate.cityRate)
+                        Text(rate.rate.asNumberStringWithPercentSign())
+                    }
+                }
+                .background(.blue)
+                
                 Spacer()
             }
             .padding()
@@ -75,7 +85,7 @@ extension TaxRateLookupView {
     }
     
     private var searchButton: some View {
-        Button(action: vm.searchForTaxRate) {
+        Button(action: vm.getTaxRate) {
             HStack {
                 Text("search".uppercased())
                     .font(.headline)

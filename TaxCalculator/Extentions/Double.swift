@@ -8,7 +8,7 @@
 import Foundation
 
 extension Double {
-    /// Double --> string representation
+    /// Converts a Double into string representation
     /// ```
     /// Convert 1.2345 to "1.23"
     /// ```
@@ -39,5 +39,13 @@ extension Double {
     func asCurrencyWith2Decimals() -> String {
         let number = NSNumber(value: self)
         return currencyFormatter2.string(from: number) ?? "$0.00"
+    }
+    
+    /// Converts a Double into string representation with percent sign
+    /// ```
+    /// Convert 1.2345 to "1.2%"
+    /// ```
+    func asNumberStringWithPercentSign() -> String {
+        return String(format: "%0.1f", self) + "%"
     }
 }

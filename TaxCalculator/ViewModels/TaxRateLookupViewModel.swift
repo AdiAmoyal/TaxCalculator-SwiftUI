@@ -7,15 +7,43 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class TaxRateLookupViewModel: ObservableObject {
+    
     @Published var streetAddress: String = ""
     @Published var city: String = ""
     @Published var zip: String = ""
+    @Published var isLoading: Bool = false
     
-    func searchForTaxRate() {
-        print(streetAddress)
-        print(city)
-        print(zip)
+    @Published var taxRate: [TaxRateModel] = []
+    
+    private let taxRateDataService = TaxRateDataService()
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    init() {
+        addSubscribers()
+    }
+    
+    func addSubscribers() {
+        taxRateDataService.$taxRate
+            .sink { [weak self] returnedTaxRate in
+                self?.taxRate = returnedTaxRate
+            }
+            .store(in: &cancellables)
+    }
+    
+    func getTaxRate() {
+        isLoading = true
+        taxRateDataService.getTaxRate(zip: zip)
+        clearTextFields()
+        isLoading = false
+    }
+    
+    func clearTextFields() {
+        self.streetAddress = ""
+        self.city = ""
+        self.zip = ""
     }
 }
