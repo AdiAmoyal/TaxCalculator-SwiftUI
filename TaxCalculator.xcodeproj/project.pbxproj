@@ -10,6 +10,8 @@
 		9104FC0A2BBCA90100A7A035 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104FC092BBCA90100A7A035 /* NetworkingManager.swift */; };
 		9104FC0D2BBCBC8900A7A035 /* TaxRateDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104FC0C2BBCBC8900A7A035 /* TaxRateDataService.swift */; };
 		9104FC0F2BBCBEF400A7A035 /* TaxRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104FC0E2BBCBEF400A7A035 /* TaxRateModel.swift */; };
+		9104FC112BBCE94C00A7A035 /* TaxRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104FC102BBCE94C00A7A035 /* TaxRateView.swift */; };
+		91227F972BC38BEC00C9E68C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91227F962BC38BEC00C9E68C /* CustomButton.swift */; };
 		915288182BBB4C2300E40C2E /* TaxCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288172BBB4C2300E40C2E /* TaxCalculatorApp.swift */; };
 		9152881A2BBB4C2300E40C2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288192BBB4C2300E40C2E /* ContentView.swift */; };
 		9152881C2BBB4C2500E40C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9152881B2BBB4C2500E40C2E /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		9104FC092BBCA90100A7A035 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		9104FC0C2BBCBC8900A7A035 /* TaxRateDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateDataService.swift; sourceTree = "<group>"; };
 		9104FC0E2BBCBEF400A7A035 /* TaxRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateModel.swift; sourceTree = "<group>"; };
+		9104FC102BBCE94C00A7A035 /* TaxRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateView.swift; sourceTree = "<group>"; };
+		91227F962BC38BEC00C9E68C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		915288142BBB4C2300E40C2E /* TaxCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		915288172BBB4C2300E40C2E /* TaxCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCalculatorApp.swift; sourceTree = "<group>"; };
 		915288192BBB4C2300E40C2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				9152882A2BBB509700E40C2E /* HomeView.swift */,
 				915288322BBB7A9100E40C2E /* CalculatorView.swift */,
 				915288362BBB7CC700E40C2E /* TaxRateLookupView.swift */,
+				9104FC102BBCE94C00A7A035 /* TaxRateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				915288392BBB847200E40C2E /* CustomTextField.swift */,
+				91227F962BC38BEC00C9E68C /* CustomButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9104FC112BBCE94C00A7A035 /* TaxRateView.swift in Sources */,
 				9152881A2BBB4C2300E40C2E /* ContentView.swift in Sources */,
 				9152883A2BBB847200E40C2E /* CustomTextField.swift in Sources */,
 				915288352BBB7AE700E40C2E /* CalculatorViewModel.swift in Sources */,
@@ -244,6 +251,7 @@
 				915288332BBB7A9100E40C2E /* CalculatorView.swift in Sources */,
 				915288372BBB7CC700E40C2E /* TaxRateLookupView.swift in Sources */,
 				9152882D2BBB58F600E40C2E /* Double.swift in Sources */,
+				91227F972BC38BEC00C9E68C /* CustomButton.swift in Sources */,
 				915288312BBB624900E40C2E /* PreviewProvider.swift in Sources */,
 				915288272BBB4C8D00E40C2E /* Color.swift in Sources */,
 				9104FC0A2BBCA90100A7A035 /* NetworkingManager.swift in Sources */,

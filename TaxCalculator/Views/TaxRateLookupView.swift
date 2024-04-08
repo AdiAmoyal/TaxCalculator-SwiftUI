@@ -10,11 +10,13 @@ import SwiftUI
 struct TaxRateLookupView: View {
     
     @StateObject var vm = TaxRateLookupViewModel()
+    @State var showTaxRateView: Bool = false
     
     var body: some View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
+//                .sheet(isPresented: $showTaxRateView, content: { TaxRateView(showTaxRateView: $showTaxRateView) })
             
             VStack(spacing: 20) {
                 header
@@ -27,19 +29,14 @@ struct TaxRateLookupView: View {
                 
                 searchButton
                 
-                VStack {
-                    Text("Results")
-                    if let rate = vm.taxRate.first {
-                        Text(rate.totalRate)
-                        Text(rate.cityRate)
-                        Text(rate.rate.asNumberStringWithPercentSign())
-                    }
-                }
-                .background(.blue)
-                
                 Spacer()
             }
             .padding()
+            
+            TaxRateView(showTaxRateView: $showTaxRateView)
+                .cornerRadius(30)
+                .offset(y: showTaxRateView ? UIScreen.main.bounds.height * 0.4 : UIScreen.main.bounds.height)
+                
         }
     }
 }
@@ -85,20 +82,26 @@ extension TaxRateLookupView {
     }
     
     private var searchButton: some View {
-        Button(action: vm.getTaxRate) {
+        Button(action: searchButtonPressed) {
             HStack {
                 Text("search".uppercased())
                     .font(.headline)
                     .foregroundColor(.theme.accent)
-                
                 Image(systemName: "arrow.forward")
             }
-            
         }
         .padding(10)
         .background(Color.theme.blue)
         .cornerRadius(6)
     }
+    
+    private func searchButtonPressed() {
+        vm.getTaxRate()
+        withAnimation(.spring()) {
+            showTaxRateView.toggle()
+        }
+    }
+    
 }
 
 struct TaxRateLookupView_Previews: PreviewProvider {
