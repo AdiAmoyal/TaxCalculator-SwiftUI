@@ -15,7 +15,7 @@ class TaxRateLookupViewModel: ObservableObject {
     @Published var city: String = ""
     @Published var zip: String = ""
     @Published var isLoading: Bool = false
-    
+
     @Published var taxRate: [TaxRateModel] = []
     
     private let taxRateDataService = TaxRateDataService()

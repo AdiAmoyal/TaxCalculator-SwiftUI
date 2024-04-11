@@ -12,6 +12,8 @@ class CalculatorViewModel: ObservableObject {
     @Published var percent: String = ""
     @Published var price: String = ""
     @Published var isLoading: Bool = false
+    @Published var isPercentPin: Bool = false
+    
     @Published var beforeTax: Double = 0.0
     @Published var tax: Double = 0.0
     
@@ -29,7 +31,9 @@ class CalculatorViewModel: ObservableObject {
     }
     
     func clearTextFields() {
-        self.percent = ""
+        if !isPercentPin {
+            self.percent = ""
+        }
         self.price = ""
     }
 }
