@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TaxRateView: View {
     
+    @ObservedObject var vm: TaxRateLookupViewModel
     @Binding var showTaxRateView: Bool
     
     var body: some View {
@@ -23,7 +24,7 @@ struct TaxRateView: View {
                 
                 VStack(spacing: 8) {
                     CustomButton(title: "calculate", action: {})
-                    CustomButton(title: "copy", action: {})
+                    CustomButton(title: "copy", action: vm.copyTaxRateToClipboard)
                     CustomButton(title: "back", action: toggleShowTaxRateView)
                 }
                 
@@ -48,6 +49,12 @@ extension TaxRateView {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    func toggleShowTaxRateView() {
+        withAnimation(.spring()) {
+            showTaxRateView.toggle()
+        }
+    }
+    
     private var taxRateSection: some View {
         VStack(spacing: 20) {
             Text("8208 161st Ave NE, Redmond, WA 98052")
@@ -56,12 +63,21 @@ extension TaxRateView {
             
             VStack(spacing: 10) {
                 Text("Tax Rate:")
-                Text("10.2%")
+                HStack {
+                    Text("10.2%")
+                    
+                    Button {
+                        vm.copyTaxRateToClipboard()
+                    } label: {
+                        Image(systemName: "doc.on.doc")
+                            .font(.body)
+                            .fontWeight(.regular)
+                    }
+                }
             }
             .font(.title2)
             .bold()
             .foregroundColor(.theme.blue)
-            
         }
         .padding()
         .background(
@@ -69,18 +85,12 @@ extension TaxRateView {
                 .fill(.white)
         )
     }
-    
-    func toggleShowTaxRateView() {
-        withAnimation(.spring()) {
-            showTaxRateView.toggle()
-        }
-    }
 }
 
 struct TaxRateView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TaxRateView(showTaxRateView: .constant(false))
+            TaxRateView(vm: dev.taxRateLookupViewModel, showTaxRateView: .constant(false))
         }
     }
 }

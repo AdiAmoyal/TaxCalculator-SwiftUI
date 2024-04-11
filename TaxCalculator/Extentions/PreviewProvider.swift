@@ -19,4 +19,5 @@ class DeveloperPreview {
     private init() { }
     
     let homeVM = HomeViewModel()
+    let taxRateLookupViewModel = TaxRateLookupViewModel()
 }

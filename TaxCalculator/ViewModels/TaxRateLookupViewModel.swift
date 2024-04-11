@@ -16,7 +16,7 @@ class TaxRateLookupViewModel: ObservableObject {
     @Published var zip: String = ""
     @Published var isLoading: Bool = false
 
-    @Published var taxRate: [TaxRateModel] = []
+    @Published var taxRate: TaxRateModel? = nil
     
     private let taxRateDataService = TaxRateDataService()
     
@@ -29,7 +29,9 @@ class TaxRateLookupViewModel: ObservableObject {
     func addSubscribers() {
         taxRateDataService.$taxRate
             .sink { [weak self] returnedTaxRate in
-                self?.taxRate = returnedTaxRate
+                if let taxRate = returnedTaxRate.first {
+                    self?.taxRate = taxRate
+                }
             }
             .store(in: &cancellables)
     }
@@ -45,5 +47,11 @@ class TaxRateLookupViewModel: ObservableObject {
         self.streetAddress = ""
         self.city = ""
         self.zip = ""
+    }
+    
+    func copyTaxRateToClipboard() {
+        if let value = taxRate {
+            UIPasteboard.general.string = value.rate.asNumberString()
+        }
     }
 }

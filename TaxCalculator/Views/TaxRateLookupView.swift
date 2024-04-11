@@ -33,7 +33,7 @@ struct TaxRateLookupView: View {
             }
             .padding()
             
-            TaxRateView(showTaxRateView: $showTaxRateView)
+            TaxRateView(vm: vm, showTaxRateView: $showTaxRateView)
                 .cornerRadius(30)
                 .offset(y: showTaxRateView ? UIScreen.main.bounds.height * 0.4 : UIScreen.main.bounds.height)
                 
