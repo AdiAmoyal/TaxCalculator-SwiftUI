@@ -22,10 +22,8 @@
 		9152882F2BBB5FB900E40C2E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152882E2BBB5FB900E40C2E /* HomeViewModel.swift */; };
 		915288312BBB624900E40C2E /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288302BBB624900E40C2E /* PreviewProvider.swift */; };
 		915288332BBB7A9100E40C2E /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288322BBB7A9100E40C2E /* CalculatorView.swift */; };
-		915288352BBB7AE700E40C2E /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288342BBB7AE700E40C2E /* CalculatorViewModel.swift */; };
 		915288372BBB7CC700E40C2E /* TaxRateLookupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288362BBB7CC700E40C2E /* TaxRateLookupView.swift */; };
 		9152883A2BBB847200E40C2E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915288392BBB847200E40C2E /* CustomTextField.swift */; };
-		9152883C2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152883B2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,10 +43,8 @@
 		9152882E2BBB5FB900E40C2E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		915288302BBB624900E40C2E /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		915288322BBB7A9100E40C2E /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
-		915288342BBB7AE700E40C2E /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		915288362BBB7CC700E40C2E /* TaxRateLookupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateLookupView.swift; sourceTree = "<group>"; };
 		915288392BBB847200E40C2E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		9152883B2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRateLookupViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				9152882E2BBB5FB900E40C2E /* HomeViewModel.swift */,
-				915288342BBB7AE700E40C2E /* CalculatorViewModel.swift */,
-				9152883B2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -241,13 +235,11 @@
 				9104FC112BBCE94C00A7A035 /* TaxRateView.swift in Sources */,
 				9152881A2BBB4C2300E40C2E /* ContentView.swift in Sources */,
 				9152883A2BBB847200E40C2E /* CustomTextField.swift in Sources */,
-				915288352BBB7AE700E40C2E /* CalculatorViewModel.swift in Sources */,
 				9152882F2BBB5FB900E40C2E /* HomeViewModel.swift in Sources */,
 				9152882B2BBB509700E40C2E /* HomeView.swift in Sources */,
 				9104FC0D2BBCBC8900A7A035 /* TaxRateDataService.swift in Sources */,
 				9104FC0F2BBCBEF400A7A035 /* TaxRateModel.swift in Sources */,
 				915288182BBB4C2300E40C2E /* TaxCalculatorApp.swift in Sources */,
-				9152883C2BBBA0A900E40C2E /* TaxRateLookupViewModel.swift in Sources */,
 				915288332BBB7A9100E40C2E /* CalculatorView.swift in Sources */,
 				915288372BBB7CC700E40C2E /* TaxRateLookupView.swift in Sources */,
 				9152882D2BBB58F600E40C2E /* Double.swift in Sources */,

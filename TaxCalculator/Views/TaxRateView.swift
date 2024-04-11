@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TaxRateView: View {
     
-    @ObservedObject var vm: TaxRateLookupViewModel
+    @EnvironmentObject private var vm: HomeViewModel
     @Binding var showTaxRateView: Bool
     
     var body: some View {
@@ -23,7 +23,13 @@ struct TaxRateView: View {
                 taxRateSection
                 
                 VStack(spacing: 8) {
-                    CustomButton(title: "calculate", action: {})
+                    CustomButton(title: "calculate", action: {
+                        vm.selectedTab = 0
+                        if let taxRate = vm.taxRate {
+                            vm.percent = taxRate.rate.asNumberString()
+                        }
+                        toggleShowTaxRateView()
+                    })
                     CustomButton(title: "copy", action: vm.copyTaxRateToClipboard)
                     CustomButton(title: "back", action: toggleShowTaxRateView)
                 }
@@ -90,7 +96,8 @@ extension TaxRateView {
 struct TaxRateView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TaxRateView(vm: dev.taxRateLookupViewModel, showTaxRateView: .constant(false))
+            TaxRateView(showTaxRateView: .constant(false))
+                .environmentObject(dev.homeVM)
         }
     }
 }

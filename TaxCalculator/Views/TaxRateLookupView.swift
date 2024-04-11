@@ -9,14 +9,18 @@ import SwiftUI
 
 struct TaxRateLookupView: View {
     
-    @StateObject var vm = TaxRateLookupViewModel()
+//    @StateObject var vm = TaxRateLookupViewModel()
+    @EnvironmentObject private var vm: HomeViewModel
     @State var showTaxRateView: Bool = false
     
     var body: some View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
-//                .sheet(isPresented: $showTaxRateView, content: { TaxRateView(showTaxRateView: $showTaxRateView) })
+                .sheet(isPresented: $showTaxRateView) {
+                    TaxRateView(showTaxRateView: $showTaxRateView)
+                        .presentationDetents([.medium])
+                }
             
             VStack(spacing: 20) {
                 header
@@ -32,11 +36,9 @@ struct TaxRateLookupView: View {
                 Spacer()
             }
             .padding()
-            
-            TaxRateView(vm: vm, showTaxRateView: $showTaxRateView)
-                .cornerRadius(30)
-                .offset(y: showTaxRateView ? UIScreen.main.bounds.height * 0.4 : UIScreen.main.bounds.height)
-                
+        }
+        .onDisappear {
+            vm.clearTaxRateLookupTextFields()
         }
     }
 }
@@ -86,9 +88,10 @@ extension TaxRateLookupView {
             HStack {
                 Text("search".uppercased())
                     .font(.headline)
-                    .foregroundColor(.theme.accent)
                 Image(systemName: "arrow.forward")
             }
+            .foregroundColor(.theme.accent)
+
         }
         .padding(10)
         .background(Color.theme.blue)
@@ -108,6 +111,7 @@ struct TaxRateLookupView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             TaxRateLookupView()
+                .environmentObject(dev.homeVM)
         }
     }
 }
